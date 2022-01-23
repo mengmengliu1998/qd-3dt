@@ -312,8 +312,8 @@ def cameratoworld(corners, pose):
                     or X(front)-Y(left)-Z(up) velodyne coordinates (KITTI)
     """
     assert corners.shape[1] == 3, ("Shape ({}) not fit".format(corners.shape))
-    corners_global = corners.dot(pose.rotation.T) + \
-                     pose.position[np.newaxis]
+
+    corners_global = corners.dot(pose.rotation.T) + pose.position[np.newaxis]
     return corners_global
 
 

@@ -85,7 +85,8 @@ def general_output(coco_json, outputs, img_info, use_3d_box_center, pred_id,
         depths_uncertainty = outputs['depth_uncertainty_results'].cpu().numpy().reshape(-1, 1)
     else:
         depths_uncertainty = [None] * n_obj_detect
-
+    #TODO:Changed by LMM
+    # print(outputs.keys())
     for (trackId,
          bbox), depth, dim, alpha, cen, depth_uncertainty, in zip(outputs['track_results'].items(),
                                     depths, dims, alphas, centers, depths_uncertainty):

@@ -267,6 +267,7 @@ class Visualizer():
                 [int(max(float(index) / len(points_hist), 0.5) * 255)])
             cv2.circle(
                 frame, (int(pt[0, 0]), int(pt[0, 1])), 3, rgba, thickness=-1)
+            cv2.putText(frame,str(int(wt[0]))+"_"+str(int(wt[1]))+"_"+str(int(wt[2])),(int(pt[0, 0]), int(pt[0, 1])), cv2.FONT_HERSHEY_SIMPLEX, 0.75, (0, 0, 255), 2)
 
         return frame
 
@@ -749,3 +750,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+    
